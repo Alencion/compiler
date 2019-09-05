@@ -1,4 +1,5 @@
 package hw01;
+
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -10,17 +11,15 @@ public class NooToC {
     FileWriter fw;
     String nooPgm;
 
-	// init
-    public NooToC (FileWriter fw, String nooPgm) throws IOException {
-		this.fw = fw;
-		this.nooPgm = nooPgm;
+    // init
+    public NooToC(FileWriter fw, String nooPgm) throws IOException {
+        this.fw = fw;
+        this.nooPgm = nooPgm;
     }
 
 
-	// translate cmd to C code for each case.
-    public  void translate(CmdExtractor.Cmds cmd) {
-        /*
-		여기를 채우시오
-		*/
+    // translate cmd to C code for each case.
+    public void translate(CmdExtractor.Cmds cmd) {
+
     }
 }

@@ -9,27 +9,28 @@ import java.io.IOException;
  */
 public class NooToCTest {
     public static void main(String[] args) {
-    	String s = "";
-		NooToC ntc = null;
-    	
-		String filePath = "test1.noo";
-    	try (FileInputStream fstream= new FileInputStream(filePath)){
-    		byte[] rb = new byte[fstream.available()];
-    		while(fstream.read(rb) != -1) {}
-    		fstream.close();
-    		s = new String(rb);
-    		
-    		System.out.println("input : " + s);
-    	}catch(Exception e) {
-    		e.getStackTrace();
-    	}
-    	
-    	try (FileWriter fw = new FileWriter("test.c")){
-       		fw.append("hello");
-       		fw.flush();
+        String s = "";
+        NooToC ntc = null;
 
-    	}catch(IOException e){
-    		e.printStackTrace();
-    	}
+        String filePath = "test1.noo";
+        try (FileInputStream fstream = new FileInputStream(filePath)) {
+            byte[] rb = new byte[fstream.available()];
+            while (fstream.read(rb) != -1) {
+            }
+            fstream.close();
+            s = new String(rb);
+
+            System.out.println("input : " + s);
+        } catch (Exception e) {
+            e.getStackTrace();
+        }
+
+        try (FileWriter fw = new FileWriter("test.c")) {
+            fw.append("hello");
+            fw.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
