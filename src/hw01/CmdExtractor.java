@@ -34,30 +34,30 @@ public class CmdExtractor {
         }
     }
 
+    // Commands 을 저장 하기 위한 collection
     private ArrayList<Cmds> cmds = new ArrayList<>();
 
     public ArrayList<Cmds> getCmds() {
         return cmds;
     }
-    public CmdExtractor(String nooPrm){
-        parsing(nooPrm);
-    }
 
-    public void parsing(String nooPrm){
+    public CmdExtractor(String nooPrm) { parsing(nooPrm); }
+
+    // 정규표현식으로 pattern을 matching된 command들을 필드 cmds에 Cmds를 저장하는 메소드
+    public void parsing(String nooPrm) {
         Pattern pattern = Pattern.compile("'\"+");
         Matcher matcher = pattern.matcher(nooPrm);
-        while(matcher.find()){
+        while (matcher.find()) {
             cmds.add(find(matcher.group()));
         }
     }
 
-    private Cmds find(String s){
+    // pattern과 매칭하여 Cmds의 pattern을 반환
+    private Cmds find(String s) {
         if (s.equals(Cmds.CMD1.matchedStr)) return Cmds.CMD1;
         if (s.equals(Cmds.CMD2.matchedStr)) return Cmds.CMD2;
         if (s.equals(Cmds.CMD3.matchedStr)) return Cmds.CMD3;
         if (s.equals(Cmds.CMD4.matchedStr)) return Cmds.CMD4;
         return Cmds.CMD5;
     }
-
-
 }
